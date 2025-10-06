@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Knowledge Hub</h1>
+        <nav>
+            <a href="#" id="nav-view-all" class="active">View All</a>
+            <a href="#" id="nav-add-new">Add New</a>
+        </nav>
+    </header>
+
+    <main>
+        <div id="view-all-page">
+            <div class="toolbar">
+                <input type="text" id="search-input" placeholder="Search by title, content, or tag...">
+            </div>
+            <div id="knowledge-list">
+                </div>
+        </div>
+
+        <div id="add-new-page" class="hidden">
+            <h2>Create New Knowledge Entry</h2>
+            <form id="add-form">
+                <div class="form-group">
+                    <label for="title-input">Title</label>
+                    <input type="text" id="title-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="content-input">Content</label>
+                    <textarea id="content-input" rows="10" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="tags-input">Tags (comma-separated)</label>
+                    <input type="text" id="tags-input" placeholder="e.g., javascript, css, webdev">
+                </div>
+                <button type="submit">Save Entry</button>
+            </form>
+        </div>
+    </main>
+
+    <div id="edit-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h2>Edit Entry</h2>
+            <form id="edit-form">
+                <input type="hidden" id="edit-id-input">
+                <div class="form-group">
+                    <label for="edit-title-input">Title</label>
+                    <input type="text" id="edit-title-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-content-input">Content</label>
+                    <textarea id="edit-content-input" rows="10" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="edit-tags-input">Tags (comma-separated)</label>
+                    <input type="text" id="edit-tags-input">
+                </div>
+                <div class="modal-actions">
+                    <button type="submit">Save Changes</button>
+                    <button type="button" id="cancel-edit-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
